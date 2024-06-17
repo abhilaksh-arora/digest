@@ -5,7 +5,7 @@ import { UserBlogCard } from "../components/UserBlogCard";
 import { useUserBlogs } from "../hooks";
 
 export const UserBlogs = () => {
-  const { loading, blogs=[] } = useUserBlogs();
+  const { loading, blogs = [] } = useUserBlogs();
   console.log(blogs);
   if (loading) {
     return (
@@ -44,6 +44,7 @@ export const UserBlogs = () => {
                   publishedDate={blog.publishedDate}
                   tags={blog.tags}
                   hastags={blog.hastags}
+                  authorId={blog.authorId}
                 />
               ))}
             </>
