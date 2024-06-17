@@ -4,6 +4,7 @@ import { stateToHTML } from "draft-js-export-html";
 import ReactHtmlParser from "react-html-parser";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
+import parse from 'html-react-parser';
 
 interface BlogCardProps {
   authorName: string;
@@ -81,7 +82,7 @@ export const UserBlogCard = ({
             <Link to={`/blog/${id}`}>
               <h2 className="mt-4 text-2xl font-bold text-black">{title}</h2>
               <p className="mt-2 text-gray-700">
-                {ReactHtmlParser(htmlContent.slice(0, 100) + "...")}
+                {parse(htmlContent.slice(0, 100) + "...")}
               </p>
               <p className="text-black font-bold text-md mt-2">{hastags}</p>
               <div className="mt-4 flex items-center space-x-2">

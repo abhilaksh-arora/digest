@@ -6,7 +6,7 @@ import Recommendations from "./Recommendations";
 import { convertFromRaw, EditorState } from "draft-js";
 import { stateToHTML } from "draft-js-export-html";
 import ReactHtmlParser from "react-html-parser";
-
+import parse from 'html-react-parser';
 
 export const FullBlog = ({ blog }: { blog: Blog }) => {
   // Convert the raw content to an EditorState
@@ -85,7 +85,7 @@ export const FullBlog = ({ blog }: { blog: Blog }) => {
             alt="Microsoft Building"
           /> */}
           <div className="text-black mt-4 text-lg">
-            {ReactHtmlParser(htmlContent)}
+            {parse(htmlContent)}
           </div>
         </div>
         <div className="my-6">
