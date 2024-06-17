@@ -3,7 +3,7 @@ import { BlogCard } from "../components/BlogCard";
 import { BlogSkeleton } from "../components/BlogSkeleton";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { Blog, useUserBlogs } from "../hooks";
+import { Blog } from "../hooks";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 import { useParams } from "react-router-dom";

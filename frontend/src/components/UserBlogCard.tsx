@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { convertFromRaw, EditorState } from "draft-js";
 import { stateToHTML } from "draft-js-export-html";
-import ReactHtmlParser from "react-html-parser";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
 interface BlogCardProps {
   authorName: string;
@@ -14,6 +13,7 @@ interface BlogCardProps {
   publishedDate: string;
   id: string;
   tags: string;
+  authorId: string;
   hastags: string;
 }
 

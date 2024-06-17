@@ -3,13 +3,14 @@ import axios from "axios";
 import { BACKEND_URL } from "../config";
 
 export interface Blog {
+  authorId: string;
   hastags: string;
   tags: string;
   img: string;
   publishedDate: string;
   content: string;
   title: string;
-  id: number;
+  id: string;
   author: {
     name: string;
   };
