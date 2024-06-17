@@ -13,6 +13,7 @@
     "@abhilaksharora/common-medium": "^1.0.1",
     "@types/draft-js": "^0.11.18",
     "@types/react-draft-wysiwyg": "^1.13.8",
+    "@types/react-html-parser": "^2.0.6",
     "axios": "^1.7.2",
     "date-fns": "^3.6.0",
     "draft-js": "^0.11.7",
