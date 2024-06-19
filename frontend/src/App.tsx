@@ -9,7 +9,7 @@ import { ViewProfile } from "./pages/ViewProfile";
 import { Edit } from "./pages/Edit";
 
 function App() {
-  const token = localStorage.getItem("token") || "abc";
+  const token = localStorage.getItem("token");
   console.log(token);
   return (
     <div className="bg-[#F9F9F9]">
@@ -19,26 +19,24 @@ function App() {
           <Route path="/blog/:id" element={<Blog />} />
           <Route
             path="/signup"
-            element={token === "abc" ? <Signup /> : <Navigate to="/" />}
+            element={!token ? <Signup /> : <Navigate to="/" />}
           />
           <Route
             path="/signin"
-            element={token === "abc" ? <Signin /> : <Navigate to="/" />}
+            element={!token ? <Signin /> : <Navigate to="/" />}
           />
           <Route
             path="/publish"
-            element={token !== "abc" ? <Publish /> : <Navigate to="/signin" />}
+            element={token ? <Publish /> : <Navigate to="/signin" />}
           />
           <Route
             path="/user-blogs"
-            element={
-              token !== "abc" ? <UserBlogs /> : <Navigate to="/signin" />
-            }
+            element={token ? <UserBlogs /> : <Navigate to="/signin" />}
           />
           <Route path="/view-user/:id" element={<ViewProfile />} />
           <Route
             path="/edit-blog/:id"
-            element={token !== "abc" ? <Edit /> : <Navigate to="/" />}
+            element={token ? <Edit /> : <Navigate to="/" />}
           />
         </Routes>
       </BrowserRouter>

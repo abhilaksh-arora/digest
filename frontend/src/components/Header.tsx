@@ -12,7 +12,7 @@ const Header = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/signin");
+    navigate("/");
   };
 
   return (
