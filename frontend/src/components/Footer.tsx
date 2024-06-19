@@ -7,12 +7,12 @@ const Footer = () => {
         <div className="flex items-center px-6">
           <Link to={"/"}>
             <h1 className="text-3xl font-bold text-black">
-              <span className="text-black">M</span>
-              <span className="text-red-500">e</span>
-              <span className="text-orange-500">d</span>
-              <span className="text-yellow-500">i</span>
-              <span className="text-green-500">u</span>
-              <span className="text-blue-500">m</span>
+            <span className="text-black">D</span>
+              <span className="text-red-500">i</span>
+              <span className="text-orange-500">g</span>
+              <span className="text-yellow-500">e</span>
+              <span className="text-green-500">s</span>
+              <span className="text-blue-500">t</span>
             </h1>
           </Link>
         </div>
