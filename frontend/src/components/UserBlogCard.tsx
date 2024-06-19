@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { convertFromRaw, EditorState } from "draft-js";
 import { stateToHTML } from "draft-js-export-html";
 import axios from "axios";
@@ -32,12 +32,14 @@ export const UserBlogCard = ({
   const editorState = EditorState.createWithContent(contentState);
   const htmlContent = stateToHTML(editorState.getCurrentContent());
   const token = localStorage.getItem("token");
+
   const handleDelete = async (id: string) => {
     try {
       const response = await axios.delete(`${BACKEND_URL}/api/v1/blog/${id}`, {
         headers: { Authorization: `${token}` },
       });
       console.log("Post deleted:", response.data);
+      window.location.reload();
     } catch (error) {
       console.error("Error deleting post:", error);
     }
