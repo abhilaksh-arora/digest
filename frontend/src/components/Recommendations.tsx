@@ -31,7 +31,7 @@ const Recommendations = () => {
         {blogs.slice(0, 2).map((blog, index) => {
           return (
             <div key={index}>
-              <Link to={"/blog/${blog.id}"}>
+              <Link to={`/blog/${blog.id}`}>
                 <div className="p-6">
                   <img
                     className="w-full h-48 rounded-md"
