@@ -23,15 +23,15 @@ const Recommendations = () => {
     );
   }
   return (
-    <Link to={"/blog/70441e70-e00b-4125-8fb4-205eb8d37854"}>
-      <div className="max-w-4xl mx-auto p-6 mt-6">
-        <h2 className="text-2xl uppercase font-bold mb-6 text-center">
-          Recommended from Medium
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {blogs.slice(0, 2).map((blog, index) => {
-            return (
-              <div key={index}>
+    <div className="max-w-4xl mx-auto p-6 mt-6">
+      <h2 className="text-2xl uppercase font-bold mb-6 text-center">
+        Recommended from Medium
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {blogs.slice(0, 2).map((blog, index) => {
+          return (
+            <div key={index}>
+              <Link to={"/blog/${blog.id}"}>
                 <div className="p-6">
                   <img
                     className="w-full h-48 rounded-md"
@@ -42,7 +42,7 @@ const Recommendations = () => {
                     <Avatar size="big" name={blog.author.name || "Anonymous"} />
                     <div className="ml-4">
                       <h2 className="text-gray-900 font-semibold">
-                      {blog.author.name || "Anonymous"}
+                        {blog.author.name || "Anonymous"}
                       </h2>
                       <p className="text-gray-600">{blog.tags}</p>
                     </div>
@@ -71,12 +71,12 @@ const Recommendations = () => {
                     <span className="ml-2">55</span>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              </Link>
+            </div>
+          );
+        })}
       </div>
-    </Link>
+    </div>
   );
 };
 
